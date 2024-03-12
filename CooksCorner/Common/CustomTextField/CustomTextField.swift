@@ -20,7 +20,7 @@ class CustomTextField: UITextField {
       }
     
        private func setUpUI() {
-           layer.cornerRadius = 42
+           layer.cornerRadius = 44 / 2
            autocorrectionType = .no
            autocapitalizationType = .none
            clearButtonMode = .whileEditing
