@@ -12,10 +12,6 @@ class SignInViewController: UIViewController {
     private var viewModel: SignInViewModel
     private let contentView = SignInView()
     
-    override func loadView() {
-        view = contentView
-    }
-    
      init(viewModel: SignInViewModel) {
          self.viewModel = viewModel
          super.init(nibName: nil, bundle: nil)
@@ -25,9 +21,13 @@ class SignInViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func loadView() {
+        view = contentView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentView.signUpNowLabel.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        contentView.signUpNowButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
     }
     
     @objc func signUpButtonTapped() {

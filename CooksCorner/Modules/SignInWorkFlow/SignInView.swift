@@ -15,7 +15,7 @@ class SignInView: UIView {
         label.text = "Welcome Back \n To CooksCorner"
         label.font = UIFont(name: "Avenir Next Medium", size: 25)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.numberOfLines = 0
         label.textColor = .white
         return label
@@ -95,7 +95,7 @@ class SignInView: UIView {
         return label
     }()
     
-    lazy var signUpNowLabel: UIButton = {
+    lazy var signUpNowButton: UIButton = {
         let button = UIButton()
         button.setTitle("Sign Up Now", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -130,7 +130,7 @@ extension SignInView {
         addSubview(passwordTextField)
         addSubview(signIntButton)
         addSubview(dontHaveAccountLabel)
-        addSubview(signUpNowLabel)
+        addSubview(signUpNowButton)
     }
     
     private func setUpConstraints() {
@@ -190,7 +190,7 @@ extension SignInView {
             $0.width.equalTo(140)
         }
         
-        signUpNowLabel.snp.makeConstraints {
+        signUpNowButton.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-80)
             $0.leading.equalTo(dontHaveAccountLabel.snp.trailing)
             $0.trailing.equalToSuperview().offset(-83)
