@@ -39,8 +39,6 @@ class SignInView: UIView {
     
     private let gmailTextField: CustomTextField = {
         let textField = CustomTextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.font = UIFont(name: "Avenir Next Medium", size: 16)
         textField.attributedPlaceholder = NSAttributedString(
             string: "Enter your gmail",
             attributes: [
@@ -48,7 +46,11 @@ class SignInView: UIView {
                 NSAttributedString.Key.foregroundColor: UIColor.gray
             ]
         )
-        
+        let button = UIButton(type: .custom)
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -30, bottom: 0, right: 0)
+        button.setImage(UIImage(named: "gmailIcon"), for: .normal)
+        textField.rightView = button
+        textField.rightViewMode = .always
         return textField
     }()
     
@@ -63,8 +65,6 @@ class SignInView: UIView {
     
     private let passwordTextField: CustomTextField = {
         let textField = CustomTextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.font = UIFont(name: "Avenir Next Medium", size: 16)
         textField.attributedPlaceholder = NSAttributedString(
             string: "Enter your password",
             attributes: [
@@ -72,7 +72,14 @@ class SignInView: UIView {
                 NSAttributedString.Key.foregroundColor: UIColor.gray
             ]
         )
-        
+        let button = UIButton(type: .custom)
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -30, bottom: 0, right: 0)
+        button.setImage(UIImage(named: "eyeIcon"), for: .normal)
+        button.setImage(UIImage(named: "selectedEyeIcon"), for: .selected)
+        button.frame = CGRect(x: CGFloat(textField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
+        button.addTarget(self, action: #selector(togglePasswordVisible), for: .touchUpInside)
+        textField.rightView = button
+        textField.rightViewMode = .always
         return textField
     }()
     
@@ -112,6 +119,17 @@ class SignInView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension SignInView: UITextFieldDelegate {
+    @objc func togglePasswordVisible(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.endEditing(true)
     }
 }
 
