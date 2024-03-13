@@ -182,7 +182,7 @@ extension SignUpView {
         addSubview(repeatPasswordTextField)
         addSubview(signUpButton)
         addSubview(alreadyHaveAccountLabel)
-        addSubview(signInNowButton)   // 13
+        addSubview(signInNowButton) 
     }
     
     private func setUpConstraints() {

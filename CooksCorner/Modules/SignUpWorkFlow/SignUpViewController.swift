@@ -8,13 +8,13 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
-
+    
     private var viewModel: SignUpViewModel
     private var contentView = SignUpView()
     
-     init(viewModel: SignUpViewModel) {
-         self.viewModel = viewModel
-         super.init(nibName: nil, bundle: nil)
+    init(viewModel: SignUpViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -27,6 +27,12 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentView.signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
     }
-
+    
+    @objc func signUpButtonTapped() {
+        let viewModel = HomeViewModel()
+        let viewController = HomeViewController(viewModel: viewModel)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }

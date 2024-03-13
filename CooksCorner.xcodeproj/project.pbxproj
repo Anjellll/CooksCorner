@@ -18,6 +18,12 @@
 		218BF7292B9F971400D33E3B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF7282B9F971400D33E3B /* SignUpViewModel.swift */; };
 		218BF72C2B9F972900D33E3B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF72B2B9F972900D33E3B /* SignUpViewController.swift */; };
 		218BF7312B9F99F000D33E3B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF7302B9F99F000D33E3B /* CustomTextField.swift */; };
+		218BF7382BA1E97D00D33E3B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF7372BA1E97D00D33E3B /* HomeViewController.swift */; };
+		218BF73A2BA1E9B100D33E3B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF7392BA1E9B100D33E3B /* HomeViewModel.swift */; };
+		218BF73C2BA1E9BC00D33E3B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF73B2BA1E9BC00D33E3B /* HomeView.swift */; };
+		218BF73F2BA200B200D33E3B /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF73E2BA200B200D33E3B /* RecipeCollectionViewCell.swift */; };
+		218BF7422BA208FF00D33E3B /* ReuseIdentifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF7412BA208FF00D33E3B /* ReuseIdentifying.swift */; };
+		218BF7452BA209B000D33E3B /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF7442BA209B000D33E3B /* RecipeModel.swift */; };
 		DAD7A13409C7628A85329723 /* Pods_CooksCorner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50193C1FB70C86B784687B53 /* Pods_CooksCorner.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +41,12 @@
 		218BF7282B9F971400D33E3B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		218BF72B2B9F972900D33E3B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		218BF7302B9F99F000D33E3B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		218BF7372BA1E97D00D33E3B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		218BF7392BA1E9B100D33E3B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		218BF73B2BA1E9BC00D33E3B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		218BF73E2BA200B200D33E3B /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
+		218BF7412BA208FF00D33E3B /* ReuseIdentifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifying.swift; sourceTree = "<group>"; };
+		218BF7442BA209B000D33E3B /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		50193C1FB70C86B784687B53 /* Pods_CooksCorner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CooksCorner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B6B5D6F0192E9F80331A236 /* Pods-CooksCorner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CooksCorner.release.xcconfig"; path = "Target Support Files/Pods-CooksCorner/Pods-CooksCorner.release.xcconfig"; sourceTree = "<group>"; };
 		7A703BBCBC11AA80A38D2FA8 /* Pods-CooksCorner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CooksCorner.debug.xcconfig"; path = "Target Support Files/Pods-CooksCorner/Pods-CooksCorner.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +85,8 @@
 		218BF7082B9F91F100D33E3B /* CooksCorner */ = {
 			isa = PBXGroup;
 			children = (
+				218BF7432BA2099000D33E3B /* Model */,
+				218BF7402BA208E600D33E3B /* Extensions */,
 				218BF72D2B9F99C800D33E3B /* Common */,
 				218BF71F2B9F965E00D33E3B /* Modules */,
 				218BF71E2B9F960A00D33E3B /* Resources */,
@@ -103,6 +117,7 @@
 		218BF71F2B9F965E00D33E3B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				218BF7362BA1E93200D33E3B /* HomeWorkFlow */,
 				218BF7212B9F967F00D33E3B /* SignUpWorkFlow */,
 				218BF7202B9F966500D33E3B /* SignInWorkFlow */,
 			);
@@ -143,6 +158,41 @@
 				218BF7302B9F99F000D33E3B /* CustomTextField.swift */,
 			);
 			path = CustomTextField;
+			sourceTree = "<group>";
+		};
+		218BF7362BA1E93200D33E3B /* HomeWorkFlow */ = {
+			isa = PBXGroup;
+			children = (
+				218BF73D2BA2009300D33E3B /* UIComponent */,
+				218BF73B2BA1E9BC00D33E3B /* HomeView.swift */,
+				218BF7392BA1E9B100D33E3B /* HomeViewModel.swift */,
+				218BF7372BA1E97D00D33E3B /* HomeViewController.swift */,
+			);
+			path = HomeWorkFlow;
+			sourceTree = "<group>";
+		};
+		218BF73D2BA2009300D33E3B /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				218BF73E2BA200B200D33E3B /* RecipeCollectionViewCell.swift */,
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
+		218BF7402BA208E600D33E3B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				218BF7412BA208FF00D33E3B /* ReuseIdentifying.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		218BF7432BA2099000D33E3B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				218BF7442BA209B000D33E3B /* RecipeModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		26CD373CD4D19BF98C72BB50 /* Pods */ = {
@@ -277,12 +327,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				218BF70E2B9F91F100D33E3B /* SignInViewController.swift in Sources */,
+				218BF73A2BA1E9B100D33E3B /* HomeViewModel.swift in Sources */,
+				218BF7452BA209B000D33E3B /* RecipeModel.swift in Sources */,
 				218BF70A2B9F91F100D33E3B /* AppDelegate.swift in Sources */,
 				218BF72C2B9F972900D33E3B /* SignUpViewController.swift in Sources */,
 				218BF7232B9F96A400D33E3B /* SignInView.swift in Sources */,
 				218BF70C2B9F91F100D33E3B /* SceneDelegate.swift in Sources */,
+				218BF73F2BA200B200D33E3B /* RecipeCollectionViewCell.swift in Sources */,
+				218BF7422BA208FF00D33E3B /* ReuseIdentifying.swift in Sources */,
+				218BF7382BA1E97D00D33E3B /* HomeViewController.swift in Sources */,
 				218BF7272B9F970600D33E3B /* SignUpView.swift in Sources */,
 				218BF7252B9F96EB00D33E3B /* SignInViewModel.swift in Sources */,
+				218BF73C2BA1E9BC00D33E3B /* HomeView.swift in Sources */,
 				218BF7292B9F971400D33E3B /* SignUpViewModel.swift in Sources */,
 				218BF7312B9F99F000D33E3B /* CustomTextField.swift in Sources */,
 			);
