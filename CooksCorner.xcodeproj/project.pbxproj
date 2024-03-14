@@ -24,6 +24,13 @@
 		218BF73F2BA200B200D33E3B /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF73E2BA200B200D33E3B /* RecipeCollectionViewCell.swift */; };
 		218BF7422BA208FF00D33E3B /* ReuseIdentifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF7412BA208FF00D33E3B /* ReuseIdentifying.swift */; };
 		218BF7452BA209B000D33E3B /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF7442BA209B000D33E3B /* RecipeModel.swift */; };
+		218BF7482BA36AEB00D33E3B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF7472BA36AEB00D33E3B /* MainTabBarController.swift */; };
+		218BF74C2BA36C2C00D33E3B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF74B2BA36C2C00D33E3B /* SearchView.swift */; };
+		218BF74E2BA36C4200D33E3B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF74D2BA36C4200D33E3B /* SearchViewModel.swift */; };
+		218BF7502BA36C5500D33E3B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF74F2BA36C5500D33E3B /* SearchViewController.swift */; };
+		218BF7522BA36C8D00D33E3B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF7512BA36C8D00D33E3B /* ProfileView.swift */; };
+		218BF7542BA36C9800D33E3B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF7532BA36C9800D33E3B /* ProfileViewModel.swift */; };
+		218BF7562BA36CA200D33E3B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218BF7552BA36CA200D33E3B /* ProfileViewController.swift */; };
 		DAD7A13409C7628A85329723 /* Pods_CooksCorner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50193C1FB70C86B784687B53 /* Pods_CooksCorner.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +54,13 @@
 		218BF73E2BA200B200D33E3B /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		218BF7412BA208FF00D33E3B /* ReuseIdentifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifying.swift; sourceTree = "<group>"; };
 		218BF7442BA209B000D33E3B /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
+		218BF7472BA36AEB00D33E3B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		218BF74B2BA36C2C00D33E3B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		218BF74D2BA36C4200D33E3B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		218BF74F2BA36C5500D33E3B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		218BF7512BA36C8D00D33E3B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		218BF7532BA36C9800D33E3B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		218BF7552BA36CA200D33E3B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		50193C1FB70C86B784687B53 /* Pods_CooksCorner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CooksCorner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B6B5D6F0192E9F80331A236 /* Pods-CooksCorner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CooksCorner.release.xcconfig"; path = "Target Support Files/Pods-CooksCorner/Pods-CooksCorner.release.xcconfig"; sourceTree = "<group>"; };
 		7A703BBCBC11AA80A38D2FA8 /* Pods-CooksCorner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CooksCorner.debug.xcconfig"; path = "Target Support Files/Pods-CooksCorner/Pods-CooksCorner.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +131,9 @@
 		218BF71F2B9F965E00D33E3B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				218BF74A2BA36BFE00D33E3B /* ProfileWorkFlow */,
+				218BF7492BA36BE800D33E3B /* SearchWorkFlow */,
+				218BF7462BA36AB400D33E3B /* MainTabBarController */,
 				218BF7362BA1E93200D33E3B /* HomeWorkFlow */,
 				218BF7212B9F967F00D33E3B /* SignUpWorkFlow */,
 				218BF7202B9F966500D33E3B /* SignInWorkFlow */,
@@ -193,6 +210,34 @@
 				218BF7442BA209B000D33E3B /* RecipeModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		218BF7462BA36AB400D33E3B /* MainTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				218BF7472BA36AEB00D33E3B /* MainTabBarController.swift */,
+			);
+			path = MainTabBarController;
+			sourceTree = "<group>";
+		};
+		218BF7492BA36BE800D33E3B /* SearchWorkFlow */ = {
+			isa = PBXGroup;
+			children = (
+				218BF74B2BA36C2C00D33E3B /* SearchView.swift */,
+				218BF74D2BA36C4200D33E3B /* SearchViewModel.swift */,
+				218BF74F2BA36C5500D33E3B /* SearchViewController.swift */,
+			);
+			path = SearchWorkFlow;
+			sourceTree = "<group>";
+		};
+		218BF74A2BA36BFE00D33E3B /* ProfileWorkFlow */ = {
+			isa = PBXGroup;
+			children = (
+				218BF7512BA36C8D00D33E3B /* ProfileView.swift */,
+				218BF7532BA36C9800D33E3B /* ProfileViewModel.swift */,
+				218BF7552BA36CA200D33E3B /* ProfileViewController.swift */,
+			);
+			path = ProfileWorkFlow;
 			sourceTree = "<group>";
 		};
 		26CD373CD4D19BF98C72BB50 /* Pods */ = {
@@ -330,12 +375,19 @@
 				218BF73A2BA1E9B100D33E3B /* HomeViewModel.swift in Sources */,
 				218BF7452BA209B000D33E3B /* RecipeModel.swift in Sources */,
 				218BF70A2B9F91F100D33E3B /* AppDelegate.swift in Sources */,
+				218BF7502BA36C5500D33E3B /* SearchViewController.swift in Sources */,
 				218BF72C2B9F972900D33E3B /* SignUpViewController.swift in Sources */,
+				218BF7562BA36CA200D33E3B /* ProfileViewController.swift in Sources */,
+				218BF7542BA36C9800D33E3B /* ProfileViewModel.swift in Sources */,
 				218BF7232B9F96A400D33E3B /* SignInView.swift in Sources */,
+				218BF74E2BA36C4200D33E3B /* SearchViewModel.swift in Sources */,
+				218BF74C2BA36C2C00D33E3B /* SearchView.swift in Sources */,
 				218BF70C2B9F91F100D33E3B /* SceneDelegate.swift in Sources */,
 				218BF73F2BA200B200D33E3B /* RecipeCollectionViewCell.swift in Sources */,
 				218BF7422BA208FF00D33E3B /* ReuseIdentifying.swift in Sources */,
+				218BF7522BA36C8D00D33E3B /* ProfileView.swift in Sources */,
 				218BF7382BA1E97D00D33E3B /* HomeViewController.swift in Sources */,
+				218BF7482BA36AEB00D33E3B /* MainTabBarController.swift in Sources */,
 				218BF7272B9F970600D33E3B /* SignUpView.swift in Sources */,
 				218BF7252B9F96EB00D33E3B /* SignInViewModel.swift in Sources */,
 				218BF73C2BA1E9BC00D33E3B /* HomeView.swift in Sources */,

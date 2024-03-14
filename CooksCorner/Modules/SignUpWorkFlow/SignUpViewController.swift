@@ -31,8 +31,7 @@ class SignUpViewController: UIViewController {
     }
     
     @objc func signUpButtonTapped() {
-        let viewModel = HomeViewModel()
-        let viewController = HomeViewController(viewModel: viewModel)
-        navigationController?.pushViewController(viewController, animated: true)
+        let mainTabBarController = MainTabBarController()
+        navigationController?.setViewControllers([mainTabBarController], animated: true)
     }
 }
