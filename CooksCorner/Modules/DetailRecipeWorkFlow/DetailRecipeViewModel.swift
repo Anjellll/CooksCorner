@@ -7,6 +7,15 @@
 
 import Foundation
 
+protocol DetailRecipeViewModelType: AnyObject {
+    
+}
+
 class DetailRecipeViewModel {
     
+    var recipe: RecipeModel?
+    
+    init(recipe: RecipeModel?) {
+        self.recipe = recipe
+    }
 }

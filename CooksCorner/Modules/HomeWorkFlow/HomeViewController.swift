@@ -50,6 +50,13 @@ extension HomeViewController:  UICollectionViewDataSource, UICollectionViewDeleg
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let recipe = viewModel.getRecipe(index: indexPath.row)
+        let detailRecipeViewModel = DetailRecipeViewModel(recipe: recipe)
+        let detailRecipeViewController = DetailRecipeViewController(viewModel: detailRecipeViewModel)
+        navigationController?.pushViewController(detailRecipeViewController, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 169, height: 209)
     }
