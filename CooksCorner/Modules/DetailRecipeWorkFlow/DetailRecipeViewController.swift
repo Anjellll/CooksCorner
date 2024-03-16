@@ -1,24 +1,24 @@
 //
-//  ProfileViewController.swift
+//  DetailRecipeViewController.swift
 //  CooksCorner
 //
-//  Created by anjella on 14/3/24.
+//  Created by anjella on 15/3/24.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class DetailRecipeViewController: UIViewController {
     
-    private var viewModel: ProfileViewModel
+    private var viewModel: DetailRecipeViewModel
     
-    init(viewModel: ProfileViewModel) {
+    init(viewModel: DetailRecipeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        view.backgroundColor = .red
     }
 
     required init?(coder: NSCoder) {

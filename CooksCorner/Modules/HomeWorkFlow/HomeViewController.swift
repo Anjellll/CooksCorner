@@ -12,15 +12,6 @@ class HomeViewController: UIViewController {
     private var viewModel: HomeViewModel
     private var contentView = HomeView()
     
-    private var recipeData: [RecipeModel] = [
-    RecipeModel(recipeImage: "recipeImage", recipeName: "Recipe-Recipe", chiefName: "by Ainsley Harriott", recipeLikeCount: 118, recipeSavedCount: 170),
-    RecipeModel(recipeImage: "recipeImage2", recipeName: "Recipe-Recipe", chiefName: "by Ainsley Harriott", recipeLikeCount: 118, recipeSavedCount: 170),
-    RecipeModel(recipeImage: "recipeImage2", recipeName: "Recipe-Recipe", chiefName: "by Ainsley Harriott", recipeLikeCount: 118, recipeSavedCount: 170),
-    RecipeModel(recipeImage: "recipeImage", recipeName: "Recipe-Recipe", chiefName: "by Ainsley Harriott", recipeLikeCount: 118, recipeSavedCount: 170),
-    RecipeModel(recipeImage: "recipeImage", recipeName: "Recipe-Recipe", chiefName: "by Ainsley Harriott", recipeLikeCount: 118, recipeSavedCount: 170),
-    RecipeModel(recipeImage: "recipeImage2", recipeName: "Recipe-Recipe", chiefName: "by Ainsley Harriott", recipeLikeCount: 118, recipeSavedCount: 170)
-    ]
-    
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -50,13 +41,12 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController:  UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return recipeData.count
+        viewModel.getRecipeCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecipeCollectionViewCell.reuseIdentifier, for: indexPath) as! RecipeCollectionViewCell
-        let data = recipeData[indexPath.row]
-        cell.configure(data: data)
+        cell.configure(data: viewModel.getRecipe(index: indexPath.row))
         return cell
     }
     

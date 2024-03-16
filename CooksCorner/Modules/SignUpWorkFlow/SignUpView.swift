@@ -304,7 +304,7 @@ extension SignUpView {
             $0.bottom.equalToSuperview().offset(-80)
             $0.leading.equalTo(alreadyHaveAccountLabel.snp.trailing)
             $0.trailing.equalToSuperview().offset(-83)
-            $0.height.equalTo(18)   // 13
+            $0.height.equalTo(18) 
         }
     }
 }

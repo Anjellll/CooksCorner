@@ -29,11 +29,13 @@ class MainTabBarController: UITabBarController {
         homeViewController.tabBarItem.image = UIImage(named: "homeIcon")
         homeViewController.tabBarItem.selectedImage = UIImage(named: "homeSelectedIcon")?.withRenderingMode(.alwaysOriginal)
         
-        let searchViewController = SearchViewController()
+        let searchViewModel = SearchViewModel()
+        let searchViewController = SearchViewController(viewModel: searchViewModel)
         searchViewController.tabBarItem.image = UIImage(named: "searchIcon")
         searchViewController.tabBarItem.selectedImage = UIImage(named: "searchSelectedIcon")?.withRenderingMode(.alwaysOriginal)
 
-        let profileViewController = ProfileViewController()
+        let profileViewModel = ProfileViewModel()
+        let profileViewController = ProfileViewController(viewModel: profileViewModel)
         profileViewController.tabBarItem.image = UIImage(named: "accountIcon")
         profileViewController.tabBarItem.selectedImage = UIImage(named: "accountSelectedIcon")?.withRenderingMode(.alwaysOriginal)
 

@@ -1,14 +1,16 @@
 //
-//  SearchView.swift
+//  DetailRecipeView.swift
 //  CooksCorner
 //
-//  Created by anjella on 14/3/24.
+//  Created by anjella on 15/3/24.
 //
 
 import UIKit
 import SnapKit
 
-class SearchView: UIView {
+class DetailRecipeView: UIView {
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,7 +23,7 @@ class SearchView: UIView {
     }
 }
 
-extension SearchView {
+extension DetailRecipeView {
     private func setUp() {
         setUpSubviews()
         setUpConstraints()
@@ -35,4 +37,5 @@ extension SearchView {
         
     }
 }
+
 

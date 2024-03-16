@@ -44,15 +44,15 @@ class HomeView: UIView {
         return label
     }()
     
-    lazy var categoryLabels: UILabel = {
-        let label = UILabel()
-        label.text = "Breakfast                Lunch                  Dinner"
-        label.font = UIFont(name: "Avenir Next Medium", size: 16)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .gray
-        return label
+    lazy var segmentedControl: SegmentedButtonsView = {
+        let segmentedControl = SegmentedButtonsView(frame: .zero, titles: ["Breakfast", "Lunch", "Dinner"])
+        segmentedControl.backgroundColor = .clear
+        segmentedControl.segmentedControlDelegate = self
+        segmentedControl.labelTextFont = UIFont(name: "Avenir Next Medium", size: 16) ?? UIFont.systemFont(ofSize: 16)
+        segmentedControl.selectorViewSize = CGSize(width: 10, height: 2)
+        return segmentedControl
     }()
-    
+
     lazy var recipeCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -76,6 +76,12 @@ class HomeView: UIView {
     }
 }
 
+extension HomeView: SegmentedControlDelegate {
+    func didIndexChanged(at index: Int) {
+        // надо сделать логику для категорий с коллекцией
+    }
+}
+
 extension HomeView {
     private func setUp() {
         setUpSubviews()
@@ -87,8 +93,8 @@ extension HomeView {
         contentView.addSubview(hiNameLabel)
         contentView.addSubview(uiDesignerCookLabel)
         addSubview(categoryTitleLabel)
-        addSubview(categoryLabels)
         addSubview(recipeCollectionView)
+        addSubview(segmentedControl)
     }
     
     private func setUpConstraints() {
@@ -119,15 +125,15 @@ extension HomeView {
             $0.height.equalTo(20)
         }
         
-        categoryLabels.snp.makeConstraints {
+        segmentedControl.snp.makeConstraints {
             $0.top.equalTo(categoryTitleLabel.snp.bottom).offset(14)
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-20)
-            $0.height.equalTo(19)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.height.equalTo(30)
         }
         
         recipeCollectionView.snp.makeConstraints {
-            $0.top.equalTo(categoryLabels.snp.bottom).offset(17)
+            $0.top.equalTo(segmentedControl.snp.bottom).offset(17)
             $0.leading.trailing.bottom.equalToSuperview()
             $0.width.equalTo(169)
             $0.height.equalTo(209)
