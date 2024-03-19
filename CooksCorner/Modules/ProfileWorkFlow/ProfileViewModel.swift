@@ -7,6 +7,20 @@
 
 import Foundation
 
-class ProfileViewModel {
+protocol ProfileViewModelType: AnyObject {
+    func getRecipeCount() -> Int
+    func getRecipe(index: Int) -> RecipeModel
+}
+
+class ProfileViewModel: ProfileViewModelType {
     
+    private var recipeData: [RecipeModel] = RecipeModel.getRecipe()
+    
+    func getRecipeCount() -> Int {
+        recipeData.count
+    }
+    
+    func getRecipe(index: Int) -> RecipeModel {
+        recipeData[index]
+    }
 }

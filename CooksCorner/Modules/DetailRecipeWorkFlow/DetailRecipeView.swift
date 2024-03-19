@@ -129,7 +129,7 @@ class DetailRecipeView: UIView {
     func updateView(recipe: RecipeModel) {
         recipeNameLabel.text = recipe.recipeName
         recipeAuthorLabel.text = recipe.chiefName
-        likeCountLabel.text = "\(recipe.recipeLikeCount)"
+        likeCountLabel.text = "\(recipe.recipeLikeCount) likes"
         recipeImage.image = UIImage(named: recipe.recipeImage)
     }
     
@@ -218,7 +218,7 @@ extension DetailRecipeView {
             $0.top.equalTo(recipeAuthorLabel.snp.bottom).offset(16)
             $0.leading.equalTo(likeIcon.snp.trailing).offset(5)
             $0.height.equalTo(24)
-            $0.width.equalTo(100)
+            $0.width.equalTo(150)
         }
         
         savedIcon.snp.makeConstraints {
